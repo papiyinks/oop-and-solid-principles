@@ -29,39 +29,30 @@ abstract class Shape {
         return $this->color;
     }
 
-    abstract protected function getArea();
 }
 
 class Square extends Shape {
-    protected $length = 4;
 
-    public function getArea()
+    public function getColor()
     {
-        return pow($this->length, 2);
+        return 'green';
     }
 }
 
 class Triangle extends Shape {
-    protected $base = 4;
 
-    protected $height = 7;
-
-    public function getArea() 
+    public function getColor() 
     {
-        return .5 * $this->base * $this->height;
+        return 'blue';
     }
 }
 
-class Circle extends Shape 
-{
-    protected $radius = 5;
+class Circle extends Shape {
 
-    public function getArea() 
-    {
-        return M_PI * pow($this->radius, 2);
-    }
 }
 
+$square = new Square;
 $circle = new Circle;
 
-echo $circle->getArea();
+echo $square->getColor();
+echo $circle->getColor();
