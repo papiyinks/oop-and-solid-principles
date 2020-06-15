@@ -48,11 +48,6 @@ function addFive1($number)
     return $total;
 }
 
-function addFive(int $number): int
-{
-    return $number + 5;
-}
-
 // 4 Child post-conditions cannot be lesser than parent function post-conditions
 
 // 5 Exceptions thrown by child method must be the same from an exception thrown by the parent 
