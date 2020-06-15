@@ -12,7 +12,10 @@ class User {
 
     public function formatJson()
     {
-        return json_encode(['name' => $this->name, 'email' => $this->email]);
+        return json_encode([
+            'name' => $this->name,
+            'email' => $this->email
+            ]);
     }
 
     public function validate($data)
@@ -20,6 +23,8 @@ class User {
         if(!isset($data['name'])){
             throw new Exception('Bad Request, User requires a name');
         }
+
+        // The isset() function checks whether a variable is set, which means that it has to be declared and is not NULL. 
 
         if(!isset($data['email'])){
             throw new Exception('Bad Request, User Email Required');

@@ -11,24 +11,33 @@ interface AirplaneInterface {
 class FutureCar implements CarInterface, AirplaneInterface {
     
     public function drive() {
-        echo 'Driving a future car!';
+        return 'Driving a future car!';
     }
   
     public function fly() {
-        echo 'Flying a future car!';
+        return 'Flying a future car!';
     }
 }
 
 class Car implements CarInterface {
     
     public function drive() {
-        echo 'Driving a car!';
+        return 'Driving a car!';
     }
 }
 
 class Airplane implements AirplaneInterface {
     
     public function fly() {
-        echo 'Flying an airplane!';
+        return 'Flying an airplane!';
     }
 }
+
+$futureCar = new FutureCar;
+var_dump($futureCar->drive());
+
+$car = new Car;
+var_dump($car->drive());
+
+$plane = new Airplane;
+var_dump($plane->fly());

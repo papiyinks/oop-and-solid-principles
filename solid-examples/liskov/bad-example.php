@@ -32,7 +32,7 @@ class ChildClass
 
 // 3 Child pre-conditions cannot be greater than parent function pre-conditions
 
-function addFive($number)
+function addFive1($number)
 {
     // pre-condition
     if(!is_integer($number)) {
@@ -77,3 +77,25 @@ class JsonFile extends File
     }
 }
 
+
+interface ObjectArithmetics {
+
+    /**
+     *
+     * @return array
+     */
+    public function getAll();
+}
+
+// Bad example
+
+class Grade implements ObjectArithmetics {
+
+    public function getAll()
+    {
+        return (10 + 50);
+    }
+}
+
+$file = new Grade;
+var_dump($file->getall());

@@ -1,7 +1,7 @@
 <?php
 
 interface EBook {
-    function read();
+    public function read();
 }
  
 class EBookReader {
@@ -32,6 +32,10 @@ class MobiBook implements EBook {
     }
 }
 
+$readBook = new EBookReader(new MobiBook);
+
+var_dump($readBook->read());
+
 // Example 2
 
 interface Logger {
@@ -39,6 +43,7 @@ interface Logger {
 }
 
 class LogToFile implements Logger {
+
     public function execute($message)
     {
         var_dump('log the message to a file: ' . $message);

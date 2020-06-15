@@ -1,25 +1,25 @@
 <?php
 
-abstract class Vehicle 
-{     
-    public function startEngine() 
+interface ObjectArithmetics {
+
+    /**
+     *
+     * @return array
+     */
+    public function getAll();
+}
+
+
+// Good example
+
+class Calculator implements ObjectArithmetics {
+
+    public function getAll()
     {
-        // Default engine start functionality                
-    }
-     
-    public function accelerate() 
-    {
-        // Default acceleration functionality
+        // Returns a solved array of objects
+        return [(1+2), (2*6), (8/2)];
     }
 }
 
-
-class Car extends Vehicle
-{
-    // Empty class
-}
-
-class Motorcycle extends Vehicle
-{
-    // Empty class
-}
+$file = new Calculator;
+var_dump($file->getall());
